@@ -1,7 +1,7 @@
-# Salva automaticamente qualquer alteração desta pasta no GitHub (branch "materiais"), verificando a cada 60 s.
+# Salva automaticamente qualquer alteração desta pasta no GitHub (branch "main"), verificando a cada 60 s.
 $repo = Split-Path -Parent $MyInvocation.MyCommand.Path
 Set-Location $repo
-$branch = 'materiais'
+$branch = 'main'
 $log = Join-Path $repo 'auto-sync.log'
 $mutex = New-Object System.Threading.Mutex($false, 'Local\MATERIAIS_AutoSync')
 if (-not $mutex.WaitOne(0)) { exit }
